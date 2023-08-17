@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import React from "react";
 
 
-function Pizza({pizzaitem}) {
+function Pizza({pizzaItem}) {
 
     const [addOrRemove, setAddOrRemove] = useState(true);
 
@@ -13,9 +13,9 @@ function Pizza({pizzaitem}) {
 
     return (<>
     <h1>
-        mapped pizza items will go here
+        {pizzaItem}
     </h1>
-    <button onClick={() => handleAddClick(pizzaitem.id)}>
+    <button onClick={() => handleAddClick(pizzaItem.id)}>
           {addOrRemove ? ("Add") : ("Remove")}
         </button>
     
