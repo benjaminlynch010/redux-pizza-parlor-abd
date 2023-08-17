@@ -1,15 +1,26 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useSelector } from "react-redux";
+
 
 function CustomerForm() {
+  const cart = useSelector((store) => store.cart);
+
 
   const [infoToAdd, setInfoToAdd] = useState({ name: '', street: '', city: '', zip: '', type: '', total: '' })
-
+  console.log(infoToAdd)
 
   const customerNext = (event) => {
-    axios.post('/order', infoToAdd)
+    let newOrder = {
+      infoToAdd: infoToAdd,
+      pizzas: [{id: cart.id,
+                quantity: 1,}]
+    }
+
+    axios.post('/order', newOrder)
       .then((response) => {
         // setInfoToAdd()
+        console.log(infoToAdd)
       })
       .catch((error) => {
         console.error(`POST Error : ${error}`)

@@ -11,7 +11,8 @@ import logger from "redux-logger";
 //Cart Reducer
 const cart = (state = [], action) => {
   if (action.type === "ADD_PIZZA") {
-    return [...state, action.payload];
+    const pizzaId = action.payload.id
+    return [...state, action.payload, action.payload.id];
   }
 
   if (action.type === "REMOVE_PIZZA") {

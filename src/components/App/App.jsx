@@ -5,6 +5,7 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Home from "../Home/Home";
+// import CustomerForm from "../CustomerForm/CustomerForm";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <img src="images/pizza_photo.png" />
       <p>Pizza is great.</p>
       <Home/>
+      {/* <CustomerForm/> */}
 
       {/* <Router>
         <div>
