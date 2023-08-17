@@ -4,6 +4,7 @@ import "./App.css";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import Home from "../Home/Home";
 
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
 
       <img src="images/pizza_photo.png" />
       <p>Pizza is great.</p>
+      <Home/>
 
-      <Router>
+      {/* <Router>
         <div>
           <ul className="nav">
             <Link to="/">Home</Link>
@@ -24,7 +26,8 @@ function App() {
             <Link to="/checkout">Checkout</Link>
             <Link to="/admin"></Link>
           </ul>
-          {/* <Route exact path="/">
+          <Home />
+          <Route exact path="/">
             <Home />
           </Route>
           <Route exact path="/form">
@@ -35,9 +38,9 @@ function App() {
           </Route>
           <Route exact path="/admin">
             <Admin />
-          </Route> */}
+          </Route>
         </div>
-      </Router>
+      </Router> */}
     </div>
   );
 }
