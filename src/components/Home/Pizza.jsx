@@ -13,7 +13,7 @@ function Pizza({pizzaItem}) {
 
     return (<>
     <h1>
-        {pizzaItem}
+        {pizzaItem.name}{pizzaItem.price}<img src={pizzaItem.image_path}></img>
     </h1>
     <button onClick={() => handleAddClick(pizzaItem.id)}>
           {addOrRemove ? ("Add") : ("Remove")}
