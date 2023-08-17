@@ -24,7 +24,7 @@ function App() {
             <Link to="/checkout">Checkout</Link>
             <Link to="/admin"></Link>
           </ul>
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <Home />
           </Route>
           <Route exact path="/form">
@@ -35,7 +35,7 @@ function App() {
           </Route>
           <Route exact path="/admin">
             <Admin />
-          </Route>
+          </Route> */}
         </div>
       </Router>
     </div>
