@@ -13,7 +13,7 @@ function Pizza({pizzaItem}) {
 
     return (<>
     <h1>
-        
+        {pizzaItem}
     </h1>
     <button onClick={() => handleAddClick(pizzaItem.id)}>
           {addOrRemove ? ("Add") : ("Remove")}
