@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import Pizza from './Pizza'
 
 function Home() {
 
