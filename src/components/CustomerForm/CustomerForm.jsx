@@ -1,4 +1,4 @@
-function CustomerInfo() {
+function CustomerForm() {
 
     const handleNameChange = (event) => {
 
@@ -68,7 +68,7 @@ function CustomerInfo() {
   );
 }
 
-export default CustomerInfo;
+export default CustomerForm;
 
 
 //Test push
