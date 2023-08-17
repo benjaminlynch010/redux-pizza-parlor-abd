@@ -1,14 +1,29 @@
 import { useState, useEffect } from "react";
 import React from "react";
+import { useDispatch } from "react-redux";
 
 
 function Pizza({pizzaItem}) {
+
+    const dispatch = useDispatch()
 
     const [addOrRemove, setAddOrRemove] = useState(true);
 
     function handleAddClick() {
         console.log('inside of handleAddClick')
         setAddOrRemove(!addOrRemove);
+        if(addOrRemove){
+            dispatch({
+                type:"ADD_PIZZA",
+                payload:pizzaItem
+            })
+        }
+        else{
+            dispatch({
+                type:"REMOVE_PIZZA",
+                payload:pizzaItem
+            })
+        }
     }
 
     return (<>
