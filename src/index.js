@@ -9,13 +9,14 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import logger from "redux-logger";
 
 //Cart Reducer
-const cart = (state = 0, action) => {
+const cart = (state = [], action) => {
   if (action.type === "ADD_PIZZA") {
-    return action.payload;
+    return [...state, action.payload];
   }
 
   if (action.type === "REMOVE_PIZZA") {
-    return action.payload;
+      const removePizza = state.filter((pizza) => pizza.id !== action.payload.id)
+    return removePizza;
   }
 
   if (action.type === "EMPTY_CART") {
