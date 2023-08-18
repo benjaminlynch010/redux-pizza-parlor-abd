@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Pizza from './Pizza'
+// import { useDispatch } from 'react-redux';
+
 
 function Home() {
+  // const dispatch = useDispatch();
 
   const [pizzaList, setPizzaList] = useState([])
 
@@ -18,6 +21,7 @@ function Home() {
       .catch((error) => {
         console.error(`Error retrieving pizza list : ${error}`)
       })
+      // dispatch({ type: "ADD_PIZZA", payload: pizzaList});
   }
 
   return (<>
