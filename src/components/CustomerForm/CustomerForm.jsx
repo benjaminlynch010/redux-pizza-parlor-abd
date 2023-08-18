@@ -16,7 +16,7 @@ function CustomerForm() {
     street_address: "",
     city: "",
     zip: "",
-    type: "",
+    type: '',
     total: total,
   });
   // console.log(infoToAdd)
@@ -26,12 +26,13 @@ function CustomerForm() {
 // after i selected pizzas i got an error the the "quantity" could not be null. 
 // so i added a quantity to the pizzas arraty after cart and it worked.
   const customerNext = (event) => {
+    event.preventDefault();
     let newOrder = {
       customer_name: infoToAdd.customer_name,
       street_address: infoToAdd.street_address,
       city: infoToAdd.city,
       zip: infoToAdd.zip,
-      type: "Delivery", // hard coded. This needs to be changed by the radial buttons
+      type: infoToAdd.type, // hard coded. This needs to be changed by the radial buttons
       total: total,
       // pizzas: [{cart: cart, quantity: 1}] //I wonder if i should do cart.id instead of just cart?
     };
@@ -77,6 +78,7 @@ function CustomerForm() {
       ...infoToAdd,
       type: event.target.value,
     });
+    console.log("inside type change", infoToAdd.type )
   };
 
   return (
@@ -115,12 +117,12 @@ function CustomerForm() {
         // value={infoToAdd.zip}
       />
 
-      {/* TRUE/FALSE toggle? */}
+    
       <label>
-        <input type="radio" name="option" value="delivery" /> Delivery
+        <input type="radio" name="Pickup" value="Delivery" checked={infoToAdd.type === 'Delivery'} onChange={handleTypeChange}/> Delivery
       </label>
       <label>
-        <input type="radio" name="option" value="pickup" /> Pickup
+        <input type="radio" name="Delivery" value="Pickup" checked={infoToAdd.type === 'Pickup'} onChange={handleTypeChange} /> Pickup
       </label>
 
       <button type="submit">NEXT</button>
