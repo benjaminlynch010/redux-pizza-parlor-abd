@@ -17,8 +17,8 @@ function CustomerForm() {
   });
   // console.log(infoToAdd)
 // I changed the info we were sending to be very specific instead of being just an array of objects.
-// I instead targeted each individual itam with dot notation.
-// this workd but i forgot to actually select pizzas so it was not including the total price.
+// I instead targeted each individual item with dot notation.
+// this worked but i forgot to actually select pizzas so it was not including the total price.
 // after i selected pizzas i got an error the the "quantity" could not be null. 
 // so i added a quantity to the pizzas arraty after cart and it worked.
   const customerNext = (event) => {
