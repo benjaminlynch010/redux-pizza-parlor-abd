@@ -5,7 +5,7 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Home from "../Home/Home";
-// import CustomerForm from "../CustomerForm/CustomerForm";
+import CustomerForm from "../CustomerForm/CustomerForm";
 
 
 function App() {
@@ -17,32 +17,31 @@ function App() {
 
       <img src="images/pizza_photo.png" />
       <p>Pizza is great.</p>
-      <Home/>
-      {/* <CustomerForm/> */}
+      {/* Set the router up for testing */}
 
-      {/* <Router>
+      <Router>
         <div>
           <ul className="nav">
-            <Link to="/">Home</Link>
-            <Link to="/form">Customer Info</Link>
-            <Link to="/checkout">Checkout</Link>
-            <Link to="/admin"></Link>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/form">Customer Info</Link></li>  
+            {/* <Link to="/checkout">Checkout</Link>
+            <Link to="/admin"></Link> */}
           </ul>
-          <Home />
+          
           <Route exact path="/">
             <Home />
           </Route>
           <Route exact path="/form">
             <CustomerForm />
           </Route>
-          <Route exact path="/checkout">
+          {/* <Route exact path="/checkout">
             <Checkout />
-          </Route>
-          <Route exact path="/admin">
+          </Route> */}
+          {/* <Route exact path="/admin">
             <Admin />
-          </Route>
+          </Route> */}
         </div>
-      </Router> */}
+      </Router>
     </div>
   );
 }
