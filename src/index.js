@@ -39,7 +39,7 @@ const total = (state = 0, action) => {
 };
 
 //Customer info Reducer
-const customerInfo = (state = 0, action) => {
+const customerInfo = (state = [], action) => {
   if (action.type === "ADD_CUSTOMER") {
     return action.payload;
   }
