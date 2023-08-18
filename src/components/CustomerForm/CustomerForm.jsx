@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { useDispatch } from 'react-redux';
+
 
 function CustomerForm() {
+  const dispatch = useDispatch();
+
   const cart = useSelector((store) => store.cart);
   const total = useSelector((store) => store.total); // passed the total reducer.
 
@@ -29,19 +33,15 @@ function CustomerForm() {
       zip: infoToAdd.zip,
       type: "Delivery", // hard coded. This needs to be changed by the radial buttons
       total: total,
-      pizzas: [{cart: cart, quantity: 1}] //I wonder if i should do cart.id instead of just cart?
+      // pizzas: [{cart: cart, quantity: 1}] //I wonder if i should do cart.id instead of just cart?
     };
-    console.log(`newOrder is: ${infoToAdd.customer_name}`);
-
-    axios
-      .post("/api/order", newOrder)
-      .then((response) => {
-        // setInfoToAdd()
-        console.log(newOrder);
-      })
-      .catch((error) => {
-        console.error(`POST Error : ${error}`);
-      });
+   
+      console.log(cart)
+      // TODO: Clear the cart and navigate to the product page
+      dispatch({ type: "ADD_CUSTOMER", payload: newOrder}); // THERE IS NO PAYLOAD TO SEND this is simply targeting the type in the store reducer.
+     
+  
+    
   };
 
   const handleNameChange = (event) => {
