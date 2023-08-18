@@ -29,7 +29,7 @@ function CustomerForm() {
       zip: infoToAdd.zip,
       type: "Delivery", // hard coded. This needs to be changed by the radial buttons
       total: total,
-      pizzas: [{cart: cart, quantity: 1}]
+      pizzas: [{cart: cart, quantity: 1}] //I wonder if i should do cart.id instead of just cart?
     };
     console.log(`newOrder is: ${infoToAdd.customer_name}`);
 
