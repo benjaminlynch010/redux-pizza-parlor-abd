@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Home from "../Home/Home";
 import CustomerForm from "../CustomerForm/CustomerForm";
+import Checkout from "../Checkout/Checkout"
 
 
 function App() {
@@ -24,8 +25,8 @@ function App() {
           <ul className="nav">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/form">Customer Info</Link></li>  
-            {/* <Link to="/checkout">Checkout</Link>
-            <Link to="/admin"></Link> */}
+            <Link to="/checkout">Checkout</Link>
+            <Link to="/admin"></Link>
           </ul>
           
           <Route exact path="/">
@@ -34,9 +35,9 @@ function App() {
           <Route exact path="/form">
             <CustomerForm />
           </Route>
-          {/* <Route exact path="/checkout">
+          <Route exact path="/checkout">
             <Checkout />
-          </Route> */}
+          </Route>
           {/* <Route exact path="/admin">
             <Admin />
           </Route> */}
