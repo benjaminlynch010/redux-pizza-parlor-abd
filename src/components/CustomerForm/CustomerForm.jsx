@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom";
+
 
 
 function CustomerForm() {
   const dispatch = useDispatch();
-
+  const history = useHistory();
   const cart = useSelector((store) => store.cart);
   const total = useSelector((store) => store.total); // passed the total reducer.
 
@@ -40,6 +42,7 @@ function CustomerForm() {
       console.log(cart)
       // TODO: Clear the cart and navigate to the product page
       dispatch({ type: "ADD_CUSTOMER", payload: newOrder}); // THERE IS NO PAYLOAD TO SEND this is simply targeting the type in the store reducer.
+      history.push("/checkout"); 
      
   
     
